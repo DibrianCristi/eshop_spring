@@ -56,5 +56,4 @@ http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-
 </beans>

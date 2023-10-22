@@ -38,7 +38,6 @@ public class AngajatController {
     public String saveAngajat(@ModelAttribute("angajat") Angajat angajat) {
 
         angajatService.saveAngajat(angajat);
-
         return "redirect:/angajat/";
     }
         @RequestMapping("/updateInfo")
