@@ -10,7 +10,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,20 +22,20 @@ public class ElectricaController {
     @Autowired
     private ElectricaService electricaService;
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String showAllAngajat(Model model) {
         List<Electrica> allElectrica = electricaService.getAllElectrica();
         model.addAttribute("allPrd", allElectrica);
         return "electrica";
     }
-    @RequestMapping("/addNewElectrica")
+    @GetMapping("/addNewElectrica")
     public String addNewElectrica(Model model) {
         Electrica electrica = new Electrica();
         model.addAttribute("electrica", electrica);
 
         return "electrica-info";
     }
-    @RequestMapping("/saveElectrica")
+    @PostMapping("/saveElectrica")
     public String saveElectrica(@ModelAttribute("electrica") Electrica electrica) {
 
         electricaService.saveElectrica(electrica);
