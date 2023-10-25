@@ -4,7 +4,7 @@
  */
 package com.mycompany.spring.shop.dao;
 
-import com.mycompany.spring.shop.entity.Electrica;
+import com.mycompany.spring.shop.entity.User;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,39 +13,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ElectricaDAOImpl implements ElectricaDAO {
-
+public class UserDAOImpl implements UserDAO{
     @Autowired
-    SessionFactory sessionFactory;
-
+    private SessionFactory sessionFactory;
+    
     @Override
-    public List<Electrica> getAllElectrica() {
-
+    public List<User> getAllUsers(){
         Session session = sessionFactory.getCurrentSession();
-        Query<Electrica> query = session.createQuery("from Electrica", Electrica.class);
-        List<Electrica> allElectrica = query.getResultList();
-
-        return allElectrica;
+        Query<User> query = session.createQuery("from User", User.class);
+        List<User> allUsers = query.getResultList();
+        return allUsers;
     }
-
+    
     @Override
-    public void saveElectrica(Electrica electrica) {
+    public void saveUser(User user){
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(electrica);
+        session.saveOrUpdate(user);
     }
-
+    
     @Override
-    public Electrica getElectrica(int id) {
+    public User getUser(int id){
         Session session = sessionFactory.getCurrentSession();
-        Electrica electrica = session.get(Electrica.class, id);
-        return electrica;
+        User user = session.get(User.class, id);
+        return user;
     }
-
+    
     @Override
-    public void deleteElectrica(int id) {
+    public void deleteUser(int id){
         Session session = sessionFactory.getCurrentSession();
-        Query<Electrica> query = session.createQuery("delete from Electrica where id =:electricaid");
-        query.setParameter("electricaid", id);
+        Query<User> query = session.createQuery("delete from User where id =:userid");
+        query.setParameter("userid", id);
         query.executeUpdate();
     }
 }

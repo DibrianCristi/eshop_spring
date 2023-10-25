@@ -17,12 +17,12 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyLoggingAspect {
     
-    Logger logger = LogManager.getLogger(MyLoggingAspect.class);
-    @Before("execution(* com.mycompany.spring.shop.dao.*.*(..))")
-  public void aroundAllMethodsAdvice(JoinPoint joinPoint){
-      logger.info("this is a info msg");
-      logger.error("this is a error msg");
-      logger.debug("Intrare metoda" + joinPoint.getSignature().toShortString());
-      System.out.println("Advice is working");
-  }  
+//    Logger logger = LogManager.getLogger(MyLoggingAspect.class);
+//    @Before("execution(* com.mycompany.spring.shop.dao.*.*(..))")
+//  public void aroundAllMethodsAdvice(JoinPoint joinPoint){
+//      logger.info("this is a info msg");
+//      logger.error("this is a error msg");
+//      logger.debug("Intrare metoda" + joinPoint.getSignature().toShortString());
+//      System.out.println("Advice is working");
+//  }  
 }
