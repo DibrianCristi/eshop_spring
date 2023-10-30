@@ -35,21 +35,21 @@ public class MyLoggingAspect {
         this.logService = logService;
     }
 
-    @AfterThrowing(pointcut = "execution(* com.mycompany.spring.shop.dao.*.*(..))", throwing = "exc")
-    public void ExceptionHandling(JoinPoint joinPoint, Throwable exc) {
-        try {
-            Date time = new Date();
-            Log log = new Log();
-            log.setMsg(exc.getMessage());
-            //log.setDate(time);
-            log.setSeverity("Metoda " + joinPoint.getSignature().toShortString());
-            System.out.println(time.toString());
-            System.out.println(exc.getMessage());
-            System.out.println("Metoda " + joinPoint.getSignature().toShortString());
-            logService.saveLog(log);
-        } catch (Exception e) {
-            logger.error("Error in ExceptionHandling" + e.getMessage());
-        }
-
-    }
+//    @AfterThrowing(pointcut = "execution(* com.mycompany.spring.shop.dao.*.*(..))", throwing = "exc")
+//    public void ExceptionHandling(JoinPoint joinPoint, Throwable exc) {
+//        try {
+//            Date time = new Date();
+//            Log log = new Log();
+//            log.setMsg(exc.getMessage());
+//            //log.setDate(time);
+//            log.setSeverity("Metoda " + joinPoint.getSignature().toShortString());
+//            System.out.println(time.toString());
+//            System.out.println(exc.getMessage());
+//            System.out.println("Metoda " + joinPoint.getSignature().toShortString());
+//            logService.saveLog(log);
+//        } catch (Exception e) {
+//            logger.error("Error in ExceptionHandling" + e.getMessage());
+//        }
+//
+//    }
 }

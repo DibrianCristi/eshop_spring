@@ -9,15 +9,20 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public class LogDAOImpl implements LogDAO{
+public class LogDAOImpl implements LogDAO {
+
     @Autowired
     private SessionFactory sessionFactory;
-    
+
     @Override
-    public void saveLog(Log log){
+    public void saveLog(Log log) {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(log);
+        try {
+            session.saveOrUpdate(log);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }

@@ -20,14 +20,14 @@ public class Log {
     @Column(name = "logger_name")
     private String msg;
     @Column(name = "log_level")
-    private String severity;
+    private String log_level;
     @Column(name = "timestamp")
-    private Date date;
+    private String date;
 
     public Log() {
     }
 
-    public Log(String msg, Date date) {
+    public Log(String msg, String date) {
         this.msg = msg;
         this.date = date;
     }
@@ -40,14 +40,14 @@ public class Log {
         return msg;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public String getSeverity() {
-        return severity;
+    public String getLogLevel() {
+        return log_level;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
@@ -56,11 +56,11 @@ public class Log {
         this.msg = msg;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public void setSeverity(String severity) {
-        this.severity = severity;
+    public void setLogLevel(String log_level) {
+        this.log_level = log_level;
     }
 }

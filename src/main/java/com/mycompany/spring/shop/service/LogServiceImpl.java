@@ -7,16 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Service
-public class LogServiceImpl implements LogService{
+public class LogServiceImpl implements LogService {
+
     @Autowired
     private LogDAO logDAO;
-    
-    
+
     @Override
     @Transactional
     public void saveLog(Log log) {
-        logDAO.saveLog(log);
+        try {
+            logDAO.saveLog(log);
+        } catch (Exception e) {
+            System.out.println("Log DAO " + e.getMessage());
+        }
+
     }
 }
