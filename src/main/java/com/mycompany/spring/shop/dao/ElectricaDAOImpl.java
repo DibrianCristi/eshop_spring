@@ -44,7 +44,7 @@ public class ElectricaDAOImpl implements ElectricaDAO {
     @Override
     public void deleteElectrica(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Query<Electrica> query = session.createQuery("delete from Electrica where id =:electricaid");
+        Query<Electrica> query = session.createQuery("delete from El;ectrica where id =:electricaid");
         query.setParameter("electricaid", id);
         query.executeUpdate();
     }
