@@ -8,8 +8,6 @@
         <table>
             <tr>
                 <th>Name</th>
-                <th>Surname</th>
-                <th>Email</th>
                 <th>Password</th>
                 <th>IS ADMIN</th>
                 <th>Operatii</th>
@@ -23,8 +21,6 @@
                 </c:url>
                 <tr>
                     <td>${user.name}</td>
-                    <td>${user.surname}</td>
-                    <td>${user.email}</td>
                     <td>${user.password}</td>
                     <td>${user.is_admin}</td>
                     <td>

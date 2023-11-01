@@ -20,24 +20,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @Column(name = "name")
+    @Column(name = "username")
     private String name;
-    @Column(name = "surname")
-    private String surname;
-    @Column(name = "email")
-    private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "is_admin")
+    @Column(name = "enabled")
     private boolean is_admin;
 
     public User() {
     }
 
-    public User(String name, String surname, String email, String password) {
+    public User(String name, String password) {
         this.name = name;
-        this.surname = surname;
-        this.email = email;
         this.password = password;
         this.is_admin = FALSE;
     }
@@ -50,13 +44,6 @@ public class User {
         return name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 
     public String getPassword() {
         return password;
@@ -70,13 +57,6 @@ public class User {
         this.name = name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public void setPassword(String password) {
         this.password = password;
