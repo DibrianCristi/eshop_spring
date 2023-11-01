@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.spring.shop.aspects;
 
 import com.mycompany.spring.shop.dao.LogDAO;
@@ -22,18 +19,18 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class MyLoggingAspect {
-
-    Logger logger = LogManager.getLogger(MyLoggingAspect.class);
-    Log log = new Log();
-    LogService logService;
-
-    @Autowired
-    public MyLoggingAspect(LogService logService) {
-        this.logService = logService;
-    }
+//
+//    Logger logger = LogManager.getLogger(MyLoggingAspect.class);
+//    Log log = new Log();
+//    LogService logService;
+//
+//    @Autowired
+//    public MyLoggingAspect(LogService logService) {
+//        this.logService = logService;
+//    }
 
 //    @AfterThrowing(pointcut = "execution(* com.mycompany.spring.shop.dao.*.*(..))", throwing = "exc")
 //    public void ExceptionHandling(JoinPoint joinPoint, Throwable exc) {

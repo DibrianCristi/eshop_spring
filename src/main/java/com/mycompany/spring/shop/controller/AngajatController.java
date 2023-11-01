@@ -46,7 +46,6 @@ public class AngajatController {
         model.addAttribute("angajat", angajat);
         return "angajat-info";
     }
- 
         @RequestMapping("/deleteAngajat")
     public String deleteEmployee(@RequestParam("angId") int id) {
         angajatService.deleteAngajat(id);
