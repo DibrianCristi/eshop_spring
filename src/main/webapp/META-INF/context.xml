@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/magazin">
-    <Resource name="jdbc/YourDataSource" auth="Container"
-              type="javax.sql.DataSource"
-              driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/shop"
-              username="root"
-              password="password"
-              maxActive="100" maxIdle="30" maxWait="10000" />
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/YourDataSource" password="password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/shop" username="root"/>
 </Context>

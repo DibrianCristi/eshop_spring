@@ -22,7 +22,6 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         
-
         auth.jdbcAuthentication().dataSource(dataSource);
         
     }
@@ -30,7 +29,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/magazin/**").hasRole("ADMIN")
+                .antMatchers("/**").hasRole("ADMIN")
                 .and().formLogin().permitAll().and().logout().permitAll();
     }
 }
