@@ -3,7 +3,8 @@
 <<html>
 
     <body>
-        <h2>Electrica Info</h2>
+            <p><a href="/magazin/electrica/">Back</a></p>
+        <h2>Electrica Info</h2>       
         <form:form action="saveElectrica" modelAttribute="electrica">
             <form:hidden path="id"/>
             Denumire <form:input path="name"/>

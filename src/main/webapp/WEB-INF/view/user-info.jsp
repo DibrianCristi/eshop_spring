@@ -3,6 +3,7 @@
 <<html>
 
     <body>
+            <p><a href="/magazin/user/">Back</a></p>
         <h2>Users Info</h2>
         <form:form action="saveUser" modelAttribute="user">
             <form:hidden path="id"/>
