@@ -4,6 +4,9 @@
  */
 package com.mycompany.spring.shop.controller;
 
+import javax.servlet.http.HttpSession;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +15,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MyController {
 
     @GetMapping("/")
-    public String mainPage() {
+    public String mainPage(HttpSession session) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null) {
+            // Get the username (session token) from the Authentication
+            String sessionToken = authentication.getName();
+
+            // You can access the session token here (sessionToken)
+            System.out.println("Session Token: " + sessionToken);
+        } else {
+            // No user is authenticated
+        }
+
         return "home";
     }
 
